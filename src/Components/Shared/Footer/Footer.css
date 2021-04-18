@@ -1,0 +1,17 @@
+footer{
+    background-color: #003366;
+}
+.social-media .icon{
+    height: 40px;
+    width: 40px;
+    color: whitesmoke;
+    border-radius: 50%;
+    border: 1px solid whitesmoke;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.repairs{
+    color: #f3f2f8ab;
+    
+}

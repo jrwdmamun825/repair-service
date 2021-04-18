@@ -1,0 +1,19 @@
+.login-page{
+    height: 100vh;
+    position: relative;
+}
+.login-area{
+    width: 600px;
+    height: 400px;
+    ;
+}
+.icons{
+    margin-right: 5px;
+    margin-top: 5px;
+    font-size: 20px;
+}
+.google-btn{
+        width: 300px;
+        background-color: #DF4930;
+        font-size: 17px;
+}

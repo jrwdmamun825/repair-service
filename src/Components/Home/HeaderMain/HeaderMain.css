@@ -1,0 +1,42 @@
+main{
+    height: 600px;
+}
+.find {
+    position: relative; 
+    width: 100%;
+    font-size: large;
+    margin-left: 20px;
+   
+}
+h1{
+    color: #272558;
+    font-size: 50px;
+}
+p{
+    color: #272558;
+}
+h4{
+    color: #1C90FF;
+}
+
+
+    
+.background-img::before {    
+    content: "";
+    background-image: url('../../../images/repairs.jpg');
+    background-size: cover;
+    position: absolute;
+    background-repeat: no-repeat;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.6;
+    height: 600px;
+    z-index: -50;
+    background-position: center;
+}
+.btn{
+    background-color: #1C90FF;
+    color: #FFFF;
+}
