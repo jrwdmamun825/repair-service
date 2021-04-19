@@ -8,9 +8,7 @@ const DashBoard = () => {
             <div className="col-md-2">
                 <SideBar></SideBar>
             </div>
-            <div className="col-md-8">
-                <Review></Review>
-            </div>
+            
         </div>
     );
 };

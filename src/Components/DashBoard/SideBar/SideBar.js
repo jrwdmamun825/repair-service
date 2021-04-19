@@ -1,12 +1,27 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {faHome,faBook,faStar, faSignOutAlt,faShoppingBasket,faPlus,faUserCog,faTasks} from '@fortawesome/free-solid-svg-icons';
 import { faFileAlt } from '@fortawesome/free-regular-svg-icons'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './SideBar.css';
 import logo from '../../../logo/logo-header.png'
+import { UserContext } from '../../../App';
 
 const SideBar = () => {
+    const [loggedInuser, setLoggedInuser] = useContext(UserContext);
+    const [isAdmin,setIsAdmin] = useState(false)
+
+    useEffect(()=> {
+        fetch('http://localhost:5050/isAdmin' , {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+              },
+              body: JSON.stringify({email: loggedInuser.email})
+        })
+        .then(res => res.json())
+        .then(data => setIsAdmin(data))
+    } ,[])
     return (
         <div className="sidebar d-flex flex-column p-2" style={{ height: "100vh" }}>
             <img src={logo} alt=""/>

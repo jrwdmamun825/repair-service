@@ -5,13 +5,18 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import AddAdmin from './Components/Admin/AddAdmin/AddAdmin';
+import ManageServices from './Components/Admin/ManageService/ManageServices';
+
 import AddService from './Components/DashBoard/AddService/AddService';
 import Book from './Components/DashBoard/Book/Book';
 import DashBoard from './Components/DashBoard/DashBoard/DashBoard';
-import Order from './Components/DashBoard/Order/Order';
+import Order from './Components/DashBoard/Order/Order/Order';
+import OrderList from './Components/DashBoard/Order/OrderList/OrderList';
 import Review from './Components/DashBoard/Review/Review';
 import Home from './Components/Home/Home/Home';
 import Login from './Components/Login/Login';
+import PrivateRoute from './Components/Login/PrivateRoute/PrivateRoute';
 
 export const UserContext = createContext();
 
@@ -41,9 +46,20 @@ const App = () => {
           <Route path="/addService">
             <AddService></AddService>
           </Route>
-          <Route path="/order">
-              <Order></Order>
+          <PrivateRoute path="/order/:_id">
+            <Order></Order>
+          </PrivateRoute>
+          <Route path="/orderList">
+            <OrderList></OrderList>
           </Route>
+          <Route path="/makeAdmin">
+            <AddAdmin></AddAdmin>
+          </Route>
+          <Route path="/manageService">
+            <ManageServices></ManageServices>
+          </Route>
+          
+
         </Switch>
       </Router>
     </UserContext.Provider>

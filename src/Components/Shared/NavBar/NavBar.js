@@ -21,7 +21,7 @@ const NavBar = () => {
                         <Link className="ms-5 link text-decoration-none text-white p-2" to="/dashBoard">DashBoard</Link>
                     </li>
                     <li >
-                        <Link className="ms-5 link text-decoration-none text-white p-2" to="/admin">Admin</Link>
+                        <Link className="ms-5 link text-decoration-none text-white p-2" to="/dashBoard">Admin</Link>
                     </li>
                     <li>
                         <Link className="ms-5 link text-decoration-none text-white p-2" to="/about">About us</Link>

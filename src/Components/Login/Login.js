@@ -6,10 +6,14 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
 import { UserContext } from '../../App';
+import { useHistory, useLocation } from 'react-router';
 
 
 const Login = () => {
-    const [loggedInuser, setLoggedInuser] = useContext(UserContext)
+    const [loggedInuser, setLoggedInuser] = useContext(UserContext);
+    let history = useHistory();
+    let location = useLocation();
+    let { from } = location.state || { from: { pathname: "/" } };
 
 
 
@@ -18,11 +22,12 @@ const Login = () => {
         firebase.auth()
             .signInWithPopup(provider)
             .then((result) => {
-                const {displayName, email} = result.user;
-                const userInfo = {name:displayName,email}
+                const { displayName, email } = result.user;
+                const userInfo = { name: displayName, email }
                 setLoggedInuser(userInfo)
+                history.replace(from);
                 console.log(userInfo);
-               
+
                 // ...
             }).catch((error) => {
                 // Handle Errors here.
@@ -30,8 +35,8 @@ const Login = () => {
                 var errorMessage = error.message;
                 var email = error.email;
                 var credential = error.credential;
-                console.log(errorCode,errorMessage,email,credential);
-               
+                console.log(errorCode, errorMessage, email, credential);
+
             });
 
     }
