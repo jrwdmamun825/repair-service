@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import review from '../../../images/review1.jpg'
-import Testomonials from '../Testomonials/Testomonials';
+import TestomonialsData from '../TestomonialsData/TestomonialsData';
 
 const Testimonials = () => {
     const [userOpinion, setUserOpinion] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5050/testomonials')
+        fetch('https://sheltered-citadel-15796.herokuapp.com/testomonials')
             .then(res => res.json())
             .then(data => setUserOpinion(data))
 
@@ -19,7 +19,7 @@ const Testimonials = () => {
             </div>
             <div className="row d-flex justify-content-center mt-5">
             {
-                    userOpinion.map(data => <Testomonials data={data}></Testomonials>)
+                    userOpinion.map(data => <TestomonialsData id={data._id} data={data}></TestomonialsData>)
                 }
             </div>
 

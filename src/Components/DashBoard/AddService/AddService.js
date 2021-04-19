@@ -14,7 +14,7 @@ const AddService = () => {
             serviceDetails: description,
             imageUrl: imgUrl
         }
-        fetch('http://localhost:5050/addService', {
+        fetch('https://sheltered-citadel-15796.herokuapp.com/addService', {
             method: 'POST',
             headers: {
                 'Content-type' : 'application/json'

@@ -8,7 +8,6 @@ const PaymentCardForm = ({ handlePayment, price }) => {
     const elements = useElements();
 
     const handleSubmit = async (event) => {
-        // Block native form submission.
         event.preventDefault();
 
         if (!stripe || !elements) {
@@ -24,12 +23,10 @@ const PaymentCardForm = ({ handlePayment, price }) => {
 
         if (error) {
             setPaymentError(error.message)
-            console.log('[error]', error.message);
-            setPaymentSuccess(null)
+            setPaymentSuccess('')
         } else {
             setPaymentSuccess(paymentMethod.id)
-            setPaymentError(null)
-            console.log('[PaymentMethod]', paymentMethod);
+            setPaymentError('')
             handlePayment(paymentMethod.id)
         }
     };
@@ -37,6 +34,7 @@ const PaymentCardForm = ({ handlePayment, price }) => {
     return (
         <div>
             <form className="" onSubmit={handleSubmit}>
+                <h5>hello</h5>
                 <div className="form-control w-50 ms-3">
                     <CardElement />
                 </div>

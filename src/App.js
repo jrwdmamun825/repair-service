@@ -9,11 +9,11 @@ import AddAdmin from './Components/Admin/AddAdmin/AddAdmin';
 import ManageServices from './Components/Admin/ManageService/ManageServices';
 
 import AddService from './Components/DashBoard/AddService/AddService';
-import Book from './Components/DashBoard/Book/Book';
 import DashBoard from './Components/DashBoard/DashBoard/DashBoard';
 import Order from './Components/DashBoard/Order/Order/Order';
 import OrderList from './Components/DashBoard/Order/OrderList/OrderList';
 import Review from './Components/DashBoard/Review/Review';
+import YourOrder from './Components/DashBoard/YourOrder/YourOrder';
 import Home from './Components/Home/Home/Home';
 import Login from './Components/Login/Login';
 import PrivateRoute from './Components/Login/PrivateRoute/PrivateRoute';
@@ -32,16 +32,15 @@ const App = () => {
           </Route>
           <Route exact path="/">
             <Home></Home>
-
           </Route>
           <Route path="/login">
             <Login></Login>
           </Route>
-          <Route path="/dashBoard">
+          <PrivateRoute path="/dashBoard">
             <DashBoard></DashBoard>
-          </Route>
-          <Route path="/book">
-            <Book></Book>
+          </PrivateRoute>
+          <Route path="/booking">
+            <YourOrder></YourOrder>
           </Route>
           <Route path="/addService">
             <AddService></AddService>

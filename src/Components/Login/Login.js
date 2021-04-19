@@ -36,9 +36,7 @@ const Login = () => {
                 var email = error.email;
                 var credential = error.credential;
                 console.log(errorCode, errorMessage, email, credential);
-
             });
-
     }
 
 

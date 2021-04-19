@@ -4,7 +4,7 @@ import SideBar from '../../SideBar/SideBar';
 const OrderList = () => {
     const [orderData, setOrderData] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5050/orderLists')
+        fetch('https://sheltered-citadel-15796.herokuapp.com/orderLists')
             .then(res => res.json())
             .then(data => {
                 setOrderData(data)
@@ -34,10 +34,10 @@ const OrderList = () => {
                             orderData.map((orders, index) =>
                                 <tr>
                                     <td>{index + 1}</td>
-                                    <td>{orders.shipment.name}</td>
-                                    <td>{orders.shipment.email}</td>
-                                    <td>{orders.shipment.service}</td>
-                                    <td>{orders.payWith.payment_method}KG</td>
+                                    <td>{orders.name}</td>
+                                    <td>{orders.email}</td>
+                                    <td>{orders.orderName}</td>
+                                    <td>{orders.payWith.payment_method}</td>
                                     <td>
                                         <div class="dropdown">
                                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

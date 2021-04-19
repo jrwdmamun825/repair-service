@@ -15,7 +15,7 @@ const ManageServices = () => {
     }, [])
     const handleClick = (id) => {
         console.log(id);
-        fetch(`http://localhost:5050/deleted/${id}` , {
+        fetch(`https://sheltered-citadel-15796.herokuapp.com/deleted/${id}` , {
             method: 'DELETE',
         })
         .then(res => res.json())
